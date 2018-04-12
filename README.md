@@ -30,5 +30,5 @@ Defaults to "moveBy 30x30" which moves the mouse 30 pixels down and to the right
 
 ## Credits
 
-Uses a neat (script)[https://github.com/npocmaka/batch.scripts/blob/master/hybrids/.net/c/mouse.bat] by Vasil Arnaudov to move the mouse in Windows.
+Uses a neat [script](https://github.com/npocmaka/batch.scripts/blob/master/hybrids/.net/c/mouse.bat) by Vasil Arnaudov to move the mouse in Windows.
 

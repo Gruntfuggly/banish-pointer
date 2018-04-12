@@ -3,7 +3,7 @@
     "displayName": "Banish Pointer",
     "description": "Move the pointer out of the way when you start typing",
     "icon": "banish-pointer.png",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "Gruntfuggly",
     "repository": "https://github.com/Gruntfuggly/banish-pointer",
     "engines": {
