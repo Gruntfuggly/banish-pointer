@@ -1,0 +1,35 @@
+{
+    "name": "banish-pointer",
+    "displayName": "Banish Pointer",
+    "description": "Move the pointer out of the way when you start typing",
+    "icon": "banish-pointer.png",
+    "version": "0.0.1",
+    "publisher": "Gruntfuggly",
+    "repository": "https://github.com/Gruntfuggly/banish-pointer",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "banish-pointer configuration",
+            "properties": {
+                "banishPointer.action": {
+                    "type": "string",
+                    "description": "What to do with the mouse when typing is detected",
+                    "default": "moveBy 30x30"
+                }
+            }
+        }
+    },
+    "devDependencies": {
+        "vscode": "^1.0.0"
+    }
+}
