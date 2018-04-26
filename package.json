@@ -24,7 +24,7 @@
                 "banishPointer.action": {
                     "type": "string",
                     "description": "What to do with the mouse when typing is detected",
-                    "default": "moveBy 30x30"
+                    "default": "moveBy -30x-30"
                 }
             }
         }

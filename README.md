@@ -25,7 +25,7 @@ The source code is available on GitHub [here](https://github.com/Gruntfuggly/ban
 
 `banishPointer.action`
 
-Defaults to "moveBy 30x30" which moves the mouse 30 pixels down and to the right. You can also use "moveTo" which will move the mouse to an absolute position.
+Defaults to "moveBy -30x-30" which moves the mouse 30 pixels up and to the left. You can also use "moveTo" which will move the mouse to an absolute position.
 
 ## Credits
 
