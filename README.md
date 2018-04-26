@@ -8,7 +8,6 @@ _Note: Current only works for Windows._
 
  - [ ] Support other platforms by default
  - [ ] Allow other tools to be used to do something with the pointer, e.g. xbanish
- - [ ] Find a way to only banish the pointer once after the mouse has been used.
 
 ## Installing
 

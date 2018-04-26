@@ -1,12 +1,10 @@
-var vscode = require( 'vscode' ),
-    path = require( 'path' ),
-    process = require( 'child_process' );
+var vscode = require( 'vscode' );
+var path = require( 'path' );
+var process = require( 'child_process' );
 
 function activate( context )
 {
-    var lastDocument;
-    var lastVersion;
-    var isTyping = false;
+    var banishPending = false;
 
     var mouseExePath = path.join( vscode.extensions.getExtension( "Gruntfuggly.banish-pointer" ).extensionPath, "mouse.bat" );
 
@@ -15,33 +13,23 @@ function activate( context )
         process.exec( mouseExePath + " " + vscode.workspace.getConfiguration( "banishPointer" ).action );
     }
 
-    function checkForTyping( e )
+    function handleEvent( e )
     {
-        if( e.textEditor && e.textEditor.document )
+        if( e.kind === vscode.TextEditorSelectionChangeKind.Keyboard )
         {
-            if( e.textEditor.document !== lastDocument )
-            {
-                lastDocument = e.textEditor.document;
-                lastVersion = e.textEditor.document.version;
-            }
-
-            var version = e.textEditor.document.version;
-            var wasTyping = isTyping;
-            isTyping = ( version != lastVersion );
-            if( lastVersion && !wasTyping && isTyping )
+            if( banishPending )
             {
                 banish();
+                banishPending = false;
             }
-            else
-            {
-                wasTyping = false;
-            }
-
-            lastVersion = version;
+        }
+        else if( e.kind === vscode.TextEditorSelectionChangeKind.Mouse )
+        {
+            banishPending = true;
         }
     }
 
-    vscode.window.onDidChangeTextEditorSelection( checkForTyping );
+    vscode.window.onDidChangeTextEditorSelection( handleEvent );
 }
 
 exports.activate = activate;
